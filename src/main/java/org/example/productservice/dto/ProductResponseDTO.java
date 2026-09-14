@@ -1,18 +1,16 @@
 package org.example.productservice.dto;
 
-import lombok.*;
 import java.math.BigDecimal;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class ProductResponseDTO {
+public record ProductResponseDTO(
 
-    private Long id;
+        Long id,
 
-    private String name;
+        String name,
 
-    private BigDecimal sellPrice;
+        BigDecimal price,
+
+        Integer stockQuantity
+
+) {
 }

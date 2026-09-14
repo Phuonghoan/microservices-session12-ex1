@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductEntity {
+public class Product {
 
     @Id
     @GeneratedValue(
@@ -19,29 +19,21 @@ public class ProductEntity {
     )
     private Long id;
 
-    @Column(nullable = false)
+    @Column(
+            nullable = false
+    )
     private String name;
 
     @Column(
             nullable = false,
-            unique = true
-    )
-    private String sku;
-
-    @Column(
-            nullable = false,
             precision = 12,
             scale = 2
     )
-    private BigDecimal importPrice;
+    private BigDecimal price;
 
     @Column(
-            nullable = false,
-            precision = 12,
-            scale = 2
+            name = "stock_quantity",
+            nullable = false
     )
-    private BigDecimal sellPrice;
-
-    @Column(nullable = false)
     private Integer stockQuantity;
 }
